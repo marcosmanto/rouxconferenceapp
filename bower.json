@@ -1,0 +1,20 @@
+{
+  "name": "rouxconferenceapp",
+  "version": "0.0.0",
+  "authors": [
+    "Marcos Mantovani <mantovani.marcos@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass-components": "~0.1.0",
+    "jquery": "2.1.3"
+  }
+}
