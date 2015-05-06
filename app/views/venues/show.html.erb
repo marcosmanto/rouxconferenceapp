@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @venue.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @venue.description %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @venue.location %>
+</p>
+
+<% @venue.assets.each do |asset| %>
+	<p>
+		<%= link_to File.basename(asset.asset.path), asset.asset.url %>
+	</p>
+	<p><small>
+		<%= number_to_human_size(asset.asset.size) %>
+	</small></p>
+<% end %>
+
+<%= link_to 'Edit', edit_venue_path(@venue) %> |
+<%= link_to 'Back', venues_path %>

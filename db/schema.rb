@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150430200913) do
+ActiveRecord::Schema.define(version: 20150506115913) do
 
   create_table "artists", force: :cascade do |t|
     t.string   "name"
@@ -29,5 +29,13 @@ ActiveRecord::Schema.define(version: 20150430200913) do
   end
 
   add_index "assets", ["imageable_type", "imageable_id"], name: "index_assets_on_imageable_type_and_imageable_id"
+
+  create_table "venues", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "location"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
 end
