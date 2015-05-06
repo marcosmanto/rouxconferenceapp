@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  root 'hello#index'
 
+  resources :artists
+
+  root 'main#index'
+  get '/about' => 'main#about'
+  get '/privacy_policy' => 'main#privacypolicy'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

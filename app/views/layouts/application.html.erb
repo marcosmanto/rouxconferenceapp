@@ -9,9 +9,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= csrf_meta_tags %>
 </head>
-<body>
-
-<%= yield %>
-
+<body class="<%= "#{params[:controller]} #{params[:action]}" %>">
+	<section class="container">
+		<%= render 'layouts/header' %>
+		<%= render 'layouts/widgets/carousel' %>
+		<div class="content row">
+			<section class="main col-lg-8">
+				<%= yield %>
+			</section><!-- main -->
+			<section class="sidebar col-lg-4">
+				<h2>Sidebar</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae et, cum maiores commodi illum doloribus aspernatur aliquid numquam amet iste?</p>
+			</section><!-- sidebar -->
+		</div><!-- content -->
+	</section><!-- container -->
 </body>
 </html>

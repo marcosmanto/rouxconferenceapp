@@ -1,0 +1,20 @@
+// $icon-font-path: "bootstrap-sass-components/fonts/bootstrap/";
+// @import 'bootstrap-sass-components/css/bootstrap';
+
+@import url(http://fonts.googleapis.com/css?family=Bree+Serif|Merriweather:400italic,400,300italic,300,700,700italic);
+$icon-font-path: "bootstrap-sass/assets/fonts/bootstrap/";
+@import "bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
+@import "bootstrap-sass/assets/stylesheets/bootstrap-custom";
+
+.glyphicon {
+	margin-right: 5px;
+}
+
+textarea { resize: none; }
+
+//	Para fade do anchor toggle do menu principal 
+.open {
+	background-color: #e7e7e7;
+  color: #555;
+}
+ 

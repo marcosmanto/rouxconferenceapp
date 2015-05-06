@@ -19,7 +19,16 @@ module Rouxconferenceapp
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
-    config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
+
+    # Bower asset paths
+    root.join('vendor', 'assets', 'components').to_s.tap do |bower_path|
+      config.sass.load_paths << bower_path
+      config.assets.paths << bower_path
+    end
+    # Minimum Sass number precision required by bootstrap-sass
+    ::Sass::Script::Value::Number.precision = [8, ::Sass::Script::Value::Number.precision].max
+
+    # config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
     config.jquery_version = "2.1.3"
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true

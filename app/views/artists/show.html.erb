@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @artist.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= simple_format(@artist.description) %>
+</p>
+
+<% @artist.assets.each do |asset| %>
+	<p>
+		<%= link_to File.basename(asset.asset.path), asset.asset.url %>
+	</p>
+	<p><small>
+		<%= number_to_human_size(asset.asset.size) %>
+	</small></p>
+<% end %>
+
+<%= link_to 'Edit', edit_artist_path(@artist) %> |
+<%= link_to 'Back', artists_path %>
